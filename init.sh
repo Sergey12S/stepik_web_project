@@ -8,3 +8,6 @@ sudo /etc/init.d/gunicorn restart
 
 cd $path1
 sudo gunicorn --bind=0.0.0.0:8000 ask.wsgi:application &
+
+sudo /etc/init.d/mysql start
+
