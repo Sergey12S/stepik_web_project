@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}Question{% endblock %}
+{% block content %}
+    {{ question.title }}<br/><br/>
+    {{ question.text }}<br/><br/>
+    <h3>Answers:</h3>
+    {% for answer in answers %}
+        {{ answer.author }}<br/>
+        {{ answer.text }}<br/><br/>
+    {% endfor %}
+{% endblock %}
