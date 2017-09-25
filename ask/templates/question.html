@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% block title %}Question{% endblock %}
 {% block content %}
+    
     {{ question.title }}<br/><br/>
     {{ question.text }}<br/><br/>
     <h3>Answers:</h3>
@@ -8,4 +9,11 @@
         {{ answer.author }}<br/>
         {{ answer.text }}<br/><br/>
     {% endfor %}
+
+    <form method="post" action="{{ question.get_url }}">
+            {% csrf_token %}
+            {{ form.as_table }}
+        <button type="submit">answer</button>
+    </form>
+
 {% endblock %}
